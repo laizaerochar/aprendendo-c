@@ -1,2 +1,2 @@
-# aprendendo-c
-Repositório para estudo em C
+# Aprendendo C
+Repositório criado para armazenar os meus estudos em C - projetos e exercícios resolvidos.
