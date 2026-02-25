@@ -7,10 +7,10 @@ int main() { // a função/o método principal é a main(), a partir dela que o 
     printf("*****************************************\n");
     
     int numerosecreto = 42; //declarei uma var
-    
-    
     int chute;
     int tentativas = 1;
+    double pontos = 1000;
+    
     
     while(1) {
     
@@ -40,7 +40,16 @@ int main() { // a função/o método principal é a main(), a partir dela que o 
             printf("Seu chute foi menor que o número secreto\n");
         }
         tentativas++; // == tentativas = tentativas + 1;
+        
+        double pontosperdidos = (double)(chute - numerosecreto) / (double)2;
+        if(pontosperdidos < 0) {
+            pontosperdidos = pontosperdidos * -1;
+        }
+        pontos = pontos - pontosperdidos;
+        
     }
     printf("Fim de jogo!\n");
-    printf("Você acertou em %d", tentativas);
+    printf("Você acertou em %d\n", tentativas);
+    printf("Total de pontos: %.1f\n", pontos);
+    
 }
