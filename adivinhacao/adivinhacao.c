@@ -1,4 +1,6 @@
 #include <stdio.h> // preciso incluir a biblioteca p escrever na tela
+#include <stdlib.h>
+#include <time.h>
 
 int main() { // a função/o método principal é a main(), a partir dela que o programa comecar a ser executado.
 // printando uma mensagem de boas vindas
@@ -6,7 +8,12 @@ int main() { // a função/o método principal é a main(), a partir dela que o 
     printf("*Bem vindo ao nosso jogo de advinhação*\n");
     printf("*****************************************\n");
     
-    int numerosecreto = 42; //declarei uma var
+    int segundos = time(0);
+    srand(segundos);
+    
+    int numerogrande = rand();
+    
+    int numerosecreto = numerogrande % 100; 
     int chute;
     int tentativas = 1;
     double pontos = 1000;
@@ -41,10 +48,7 @@ int main() { // a função/o método principal é a main(), a partir dela que o 
         }
         tentativas++; // == tentativas = tentativas + 1;
         
-        double pontosperdidos = (double)(chute - numerosecreto) / (double)2;
-        if(pontosperdidos < 0) {
-            pontosperdidos = pontosperdidos * -1;
-        }
+        double pontosperdidos = abs(chute - numerosecreto) / (double)2;
         pontos = pontos - pontosperdidos;
         
     }
