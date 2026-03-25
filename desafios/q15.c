@@ -13,3 +13,6 @@
      
      return 0;
  }
+
+// EXPLICACA0: 
+// resultado é uma variavel e o & pega o endereco dessa variavel, a funcao escreve o valor dentro dela msm usando o ponteiro
